@@ -2,6 +2,13 @@
 
 This repository contains the code and instructions for a pair programming exercise using Terraform. The goal of this exercise is to deploy a small EKS cluster on AWS and deploy a TypeScript app to the EKS cluster.
 
+## Goals
+We'll try to do the following, as much as infra feedback loop allows ;-) 
+
+1. Setup Terraform and create an EKS cluster 
+1. Deploy and test our example nodejs app to the cluster
+1. Setup monitoring in Datadog
+
 ## Prerequisites
 
 Before starting the exercise, make sure you have the following prerequisites installed:
