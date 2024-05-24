@@ -1,3 +1,3 @@
-resource "aws_ecr_repository" "ecr_repo" {
-    name = "ecr_example_repo"
+resource "aws_ecr_repository" "superapp_ecr_repo" {
+    name = "superapp"
 }

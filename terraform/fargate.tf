@@ -95,8 +95,8 @@ resource "aws_ecs_task_definition" "backend_task" {
     container_definitions = <<EOT
 [
     {
-        "name": "example_app_container",
-        "image": "<your_ecr_repo_url>:latest",
+        "name": "superapp-container",
+        "image": "767398072397.dkr.ecr.us-west-2.amazonaws.com/superapp:latest",
         "memory": 512,
         "essential": true,
         "portMappings": [
@@ -128,4 +128,10 @@ resource "aws_ecs_service" "backend_service" {
         security_groups = ["${aws_security_group.security_group_example_app.id}"]
         assign_public_ip = true
     }
+
+    load_balancer {
+    target_group_arn = aws_lb_target_group.foo.arn
+    container_name   = "mongo"
+    container_port   = 8080
+  }
 }
